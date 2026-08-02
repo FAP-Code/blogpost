@@ -3,6 +3,7 @@ title: "The Numbers Behind Ghana's Value Leakage Problem"
 date: "2026-08-03"
 excerpt: "Key findings and figures from Beyond Cocoa: Ghana exports 95% of its cashew and rubber raw, and 90% of its shea. Here is what the data says, with sources."
 tags: ["beyond-cocoa", "cashew", "shea", "rubber", "oil-palm"]
+series: "Ghana: Beyond Cocoa"
 ---
 
 *Beyond Cocoa: Unlocking Ghana's Non-Traditional Agricultural Value Chains for Diversification and Inclusive Growth* is the full policy paper behind this blog (the source document is in `research/beyond-cocoa/` in this repo). This post pulls out the findings and figures that matter most, with their sources, for readers who want the substance without the full paper.

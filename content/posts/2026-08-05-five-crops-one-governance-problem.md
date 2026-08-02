@@ -3,6 +3,7 @@ title: "Five Crops, One Governance Problem"
 date: "2026-08-05"
 excerpt: "Cashew, shea, rubber, horticulture, and oil palm each have their own agronomic story, but the same pattern repeats in every one: raw exports win because domestic processors can't compete for feedstock, financing, or energy."
 tags: ["beyond-cocoa", "cashew", "shea", "rubber", "oil-palm", "horticulture"]
+series: "Ghana: Beyond Cocoa"
 ---
 
 *Beyond Cocoa* builds its argument around five case studies. Each crop has its own agronomy and history, but the same structural pattern shows up in every one: productive capacity exists, foreign buyers offer cash that domestic processors cannot match, factories run below capacity, and a policy response gets announced but not enforced.

@@ -3,6 +3,7 @@ title: "Why Gold Overtaking Cocoa Isn't Diversification"
 date: "2026-08-04"
 excerpt: "Gold now earns Ghana more than cocoa ever did. That looks like progress, but it employs under 4% of the workforce and carries the same boom-bust risk. Here's the background on why non-traditional agriculture is the more durable bet."
 tags: ["beyond-cocoa", "background", "gold", "export-structure"]
+series: "Ghana: Beyond Cocoa"
 ---
 
 Ghana's agricultural economy was built around cocoa: a single crop, priced by buyers in London and New York, that delivered boom years when global prices rose and fiscal crisis when they fell. That vulnerability defined the country's economy for most of the twentieth century, regardless of which government was in power (Ruf, 2007).

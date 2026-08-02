@@ -52,26 +52,68 @@ function readPosts() {
         date: data.date || "",
         excerpt: data.excerpt || "",
         tags: data.tags || [],
+        series: data.series || null,
         html: marked.parse(content),
       };
     })
     .sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
+// Groups consecutive-or-not posts sharing a frontmatter `series` under one
+// heading on the homepage, instead of listing every post as a flat item.
+// Posts without a `series` render exactly as before (standalone).
+function groupPosts(posts) {
+  const groups = [];
+  const bySeriesKey = new Map();
+  for (const p of posts) {
+    if (!p.series) {
+      groups.push({ series: null, posts: [p] });
+      continue;
+    }
+    if (!bySeriesKey.has(p.series)) {
+      const group = { series: p.series, posts: [] };
+      bySeriesKey.set(p.series, group);
+      groups.push(group);
+    }
+    bySeriesKey.get(p.series).posts.push(p);
+  }
+  return groups;
+}
+
 function buildIndex(posts) {
-  const items = posts
-    .map(
-      (p) => `
+  const sections = groupPosts(posts)
+    .map((group) => {
+      if (!group.series) {
+        const p = group.posts[0];
+        return `
     <div class="post-list-item">
       <div class="post-meta">${p.date}</div>
       <h2><a href="posts/${p.slug}.html">${p.title}</a></h2>
       <p>${p.excerpt}</p>
-    </div>`
-    )
+    </div>`;
+      }
+
+      const items = group.posts
+        .map(
+          (p) => `
+      <div class="post-list-item series-item">
+        <div class="post-meta">${p.date}</div>
+        <h3><a href="posts/${p.slug}.html">${p.title}</a></h3>
+        <p>${p.excerpt}</p>
+      </div>`
+        )
+        .join("\n");
+
+      return `
+    <section class="post-series">
+      <h2 class="series-heading">${group.series}</h2>
+      ${items}
+    </section>`;
+    })
     .join("\n");
 
   const content = `<h1 style="font-family:'Playfair Display',serif;color:var(--navy)">Latest Posts</h1>\n${
-    items || "<p>No posts yet — add markdown files to content/posts/.</p>"
+    sections || "<p>No posts yet — add markdown files to content/posts/.</p>"
   }`;
 
   return render("Home", "Research and commentary on Ghana's economic development, Africa, and the world.", content, 0);
