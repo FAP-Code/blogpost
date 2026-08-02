@@ -1,0 +1,18 @@
+{
+  "name": "blogpost",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Research, policy writing, and social media content on Ghana's economic development and structural transformation.",
+  "type": "module",
+  "scripts": {
+    "build": "node site/build.js",
+    "serve": "node site/build.js && npx --yes serve dist",
+    "docx": "node scripts/generate-docx.js",
+    "flyer": "node scripts/generate-flyer.js"
+  },
+  "dependencies": {
+    "docx": "^9.0.2",
+    "marked": "^13.0.0",
+    "gray-matter": "^4.0.3"
+  }
+}
