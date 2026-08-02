@@ -8,8 +8,8 @@
 **Focus Crops:** Cashew · Shea · Rubber · Oil Palm · Mango · Pineapple
 
 **Author:** Frank Adu Poku
-MSc International Economics and Management (in progress) — Paderborn Universität, Germany
-BSc Business Administration (Accounting) — Kwame Nkrumah University of Science and Technology, Ghana
+MSc International Economics and Management (in progress), Paderborn Universität, Germany
+BSc Business Administration (Accounting), Kwame Nkrumah University of Science and Technology, Ghana
 
 ## Table of Contents
 
@@ -41,11 +41,11 @@ This paper argues that Ghana's non-traditional agricultural value chains, cashew
 
 ### Key Findings
 
-1. **Shifting Dependence, Not Diversifying** — Ghana is not diversifying its export base, it is replacing one raw commodity dependence with another. Gold has superseded cocoa as the leading export, but gold mining is capital-intensive, employs fewer than 4% of the workforce, and generates severe fiscal pro-cyclicality identical to cocoa.
-2. **The Raw Export Trap Across All Sectors** — Ghana exports 95% of cashew, 95% of rubber, and 90% of shea in raw form. Only 6–10% of cashew is processed domestically. The country produces palm oil but imports refined palm products, spending precious foreign exchange on goods it could manufacture at home.
-3. **Governance Failure, Not Investment Shortage** — Raw export bans have been announced but not enforced. Processing factories operate below capacity due to feedstock shortages caused by regulatory gaps. The One District, One Factory programme was officially discontinued after many announced facilities never became operational.
-4. **Infrastructure and Finance Deficits Compound the Problem** — Post-harvest losses reach 30–40% in horticulture due to absent cold chain infrastructure. Agricultural processors cannot access long-term affordable finance through commercial banks, and the Development Bank Ghana's rural agro-processing portfolio remains underdeveloped.
-5. **The $12 Billion Opportunity Requires Systems Reform** — The TCDA's 2026 blueprint projects that six priority tree crops could generate $12 billion annually by 2030. Realising this target requires not only production scaling but a coordinated institutional architecture that currently does not exist.
+1. **Shifting Dependence, Not Diversifying**: Ghana is not diversifying its export base, it is replacing one raw commodity dependence with another. Gold has superseded cocoa as the leading export, but gold mining is capital-intensive, employs fewer than 4% of the workforce, and generates severe fiscal pro-cyclicality identical to cocoa.
+2. **The Raw Export Trap Across All Sectors**: Ghana exports 95% of cashew, 95% of rubber, and 90% of shea in raw form. Only 6–10% of cashew is processed domestically. The country produces palm oil but imports refined palm products, spending precious foreign exchange on goods it could manufacture at home.
+3. **Governance Failure, Not Investment Shortage**: Raw export bans have been announced but not enforced. Processing factories operate below capacity due to feedstock shortages caused by regulatory gaps. The One District, One Factory programme was officially discontinued after many announced facilities never became operational.
+4. **Infrastructure and Finance Deficits Compound the Problem**: Post-harvest losses reach 30–40% in horticulture due to absent cold chain infrastructure. Agricultural processors cannot access long-term affordable finance through commercial banks, and the Development Bank Ghana's rural agro-processing portfolio remains underdeveloped.
+5. **The $12 Billion Opportunity Requires Systems Reform**: The TCDA's 2026 blueprint projects that six priority tree crops could generate $12 billion annually by 2030. Realising this target requires not only production scaling but a coordinated institutional architecture that currently does not exist.
 
 ### Priority Recommendations
 
@@ -234,30 +234,30 @@ Each recommendation below identifies the responsible institution, the specific a
 
 ### 8.1 Value-Chain-Specific Strategies
 
-**R1 — Cashew: Mandate Domestic Processing Floors**
+**R1. Cashew: Mandate Domestic Processing Floors**
 The TCDA must immediately mandate that a minimum of 30 percent of annual raw cashew production be processed domestically before export, rising to 60 percent by 2030. This mandate must be operationalised through an export permit system administered by the TCDA: exporters of raw cashew must demonstrate compliance with the domestic processing floor before permits are issued. The mandate must be paired with subsidised industrial energy tariffs for licensed processors through the Energy Commission, and a TCDA-administered feedstock allocation register that matches available raw nut supply to licensed domestic processors before permitting raw exports. The key implementation constraint is political pressure from raw nut exporters and their foreign buyers, this must be anticipated and managed through clear public communication of the enforcement timeline. *Responsible institution: TCDA, Ministry of Energy, Ghana Revenue Authority. Target: Q4 2026.*
 
-**R2 — Shea: Enforce the Export Ban and Protect Women Processors**
+**R2. Shea: Enforce the Export Ban and Protect Women Processors**
 The announced ban on raw shea nut exports during the processing season must be enforced with the same regulatory seriousness as the cocoa farmgate price mechanism. The TCDA must establish a Shea Nut Price Stabilisation Fund, modelled on the Cocoa Stabilisation Mechanism, capitalised by a levy on existing raw shea nut exports, to shield women processors from the extreme price volatility that destroyed processing capacity in 2024. Community-level shea processing centres must be established in Ghana's three northern regions, co-financed by the Development Bank Ghana and managed by women's cooperatives. Concurrently, the Carbon Markets Office under the EPA should begin registering shea tree parklands as carbon assets, with pilot credit authorisations targeting rural cooperative beneficiaries. *Responsible institution: TCDA, DBG, EPA Carbon Markets Office. Target: enforcement by Q2 2026; fund operational Q4 2026.*
 
-**R3 — Rubber: Commission the Export Trial and Design a Permanent Framework**
+**R3. Rubber: Commission the Export Trial and Design a Permanent Framework**
 The Association of Rubber Actors' proposal for a 3–6 month trial suspension of raw rubber exports must be commissioned as a formal policy experiment, with monitoring conducted by the TCDA and the Ghana Statistical Service to measure domestic processor absorption capacity. Results must inform a permanent feedstock allocation framework. Energy tariff concessions for rubber processors must be introduced through the Energy Commission, with eligibility tied to TCDA processing certification. *Responsible institution: TCDA, Ghana Statistical Service, Energy Commission. Target: trial commencing Q3 2026.*
 
-**R4 — Horticulture: Cold Chain First, Then Market Access**
+**R4. Horticulture: Cold Chain First, Then Market Access**
 The Ministry of Roads and Highways must ring-fence a minimum of 8 percent of the annual road fund for feeder road rehabilitation in the Eastern Region pineapple corridor and the Northern Region mango zones, the two highest-value horticultural export corridors. Public-private partnerships for cold chain infrastructure must be structured such that the government provides land, utility connections, and road access, while private operators manage refrigerated storage and pack-house facilities. The Ghana Export Promotion Authority must establish a Phytosanitary Compliance Support Fund to co-finance smallholder GlobalGAP certification and EU Deforestation Regulation traceability system registration. *Responsible institution: Ministry of Roads, GEPA, Ministry of Agriculture. Target: PPP structures tendered Q1 2027.*
 
-**R5 — Oil Palm: Link Certification to Smallholder Clusters**
+**R5. Oil Palm: Link Certification to Smallholder Clusters**
 The TCDA must accelerate RSPO certification of oil palm smallholder clusters in the Western, Central, and Eastern regions as a precondition for linking them to 1D1F-successor processing facilities. The Ministry of Trade should negotiate preferential import tariffs on refined palm oil from RSPO-certified Ghanaian exporters with key trading partners under the AfCFTA framework, creating a market pull for certified domestic production. Smallholder productivity extension must be resourced through MoFA's district offices, with a specific mandate to reduce the four-fold productivity gap between smallholders and estate operations. *Responsible institution: TCDA, Ministry of Trade, MoFA. Target: cluster certification programme launched Q2 2026.*
 
 ### 8.2 Cross-Cutting Institutional and Finance Reforms
 
-**R6 — Establish an Agricultural Value Chain Coordination Office**
+**R6. Establish an Agricultural Value Chain Coordination Office**
 Parliament should establish an Agricultural Value Chain Coordination Office (AVCCO) within the Office of the President, with the legal authority to issue binding coordination directives to MoFA, MOTI, GEPA, TCDA, and DBG, and to hold each institution accountable against quarterly value chain performance targets. This is the single most important institutional reform recommended in this paper. Without coordination authority at the centre of government, the fragmentation diagnosed in Section 7 will persist regardless of how well individual institutions perform. *Responsible institution: Office of the President, Parliament. Target: legislation tabled Q1 2027.*
 
-**R7 — Direct the Development Bank Ghana to Prioritise Agro-Processing**
+**R7. Direct the Development Bank Ghana to Prioritise Agro-Processing**
 The DBG's Board must formally adopt a minimum portfolio allocation of 30 percent of annual lending to rural agro-processing, with lending terms of 7–15 years at concessional rates for smallholder cooperatives and women-led enterprises. The Ministry of Finance should negotiate a blended finance facility, combining DBG capital with concessional funding from IFC, AfDB, and bilateral development finance institutions, specifically targeting the $1–10 million investment range that commercial banks and large DFIs both currently ignore. *Responsible institution: DBG Board, Ministry of Finance. Target: portfolio mandate adopted Q3 2026; blended facility structured Q1 2027.*
 
-**R8 — Create a Non-Traditional Agricultural Export Processing Fund**
+**R8. Create a Non-Traditional Agricultural Export Processing Fund**
 The Ministry of Finance should establish a Non-Traditional Agricultural Export Processing Fund, capitalised by a 3 percent levy on raw commodity exports across all TCDA priority sectors. The fund should be ring-fenced, independently governed, and deployed exclusively for processing infrastructure investment, energy cost subsidies for licensed processors, and smallholder certification support. This mechanism creates a fiscal feedback loop in which the continuation of raw exports directly finances the infrastructure and incentives needed to eventually eliminate them. *Responsible institution: Ministry of Finance, TCDA. Target: fund design Q3 2026; first capitalisation Q4 2026.*
 
 ## 9. Ghana at a Strategic Crossroads
