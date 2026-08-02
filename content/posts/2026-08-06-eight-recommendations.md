@@ -4,6 +4,7 @@ date: "2026-08-06"
 excerpt: "Beyond Cocoa doesn't just diagnose the problem, it names who is responsible for fixing it and by when. Here are the eight recommendations, crop-specific and cross-cutting."
 tags: ["beyond-cocoa", "policy", "recommendations"]
 series: "Ghana: Beyond Cocoa"
+part: 5
 ---
 
 The previous posts covered why Ghana's shift from cocoa to gold isn't real diversification, and how the same governance failure shows up across cashew, shea, rubber, horticulture, and oil palm. This post covers what *Beyond Cocoa* actually recommends: eight reforms, each naming a responsible institution and a target timeframe, rather than a general call for more investment.

@@ -53,6 +53,7 @@ function readPosts() {
         excerpt: data.excerpt || "",
         tags: data.tags || [],
         series: data.series || null,
+        part: typeof data.part === "number" ? data.part : null,
         html: marked.parse(content),
       };
     })
@@ -77,6 +78,17 @@ function groupPosts(posts) {
     }
     bySeriesKey.get(p.series).posts.push(p);
   }
+
+  // A series reads as a narrative, oldest/Part 1 first, unlike the
+  // reverse-chronological feed order used for standalone posts.
+  for (const group of groups) {
+    if (!group.series) continue;
+    group.posts.sort((a, b) => {
+      if (a.part != null && b.part != null) return a.part - b.part;
+      return a.date < b.date ? -1 : 1;
+    });
+  }
+
   return groups;
 }
 
@@ -97,7 +109,7 @@ function buildIndex(posts) {
         .map(
           (p) => `
       <div class="post-list-item series-item">
-        <div class="post-meta">${p.date}</div>
+        <div class="post-meta">${p.part != null ? `Part ${p.part} &middot; ` : ""}${p.date}</div>
         <h3><a href="posts/${p.slug}.html">${p.title}</a></h3>
         <p>${p.excerpt}</p>
       </div>`
@@ -119,11 +131,24 @@ function buildIndex(posts) {
   return render("Home", "Research and commentary on Ghana's economic development, Africa, and the world.", content, 0);
 }
 
-function buildPost(post) {
+function buildPost(post, seriesNav) {
+  const metaLine = seriesNav
+    ? `${post.series} &middot; Part ${post.part} of ${seriesNav.total} &middot; ${post.date}`
+    : post.date;
+
+  const nav =
+    seriesNav && (seriesNav.prev || seriesNav.next)
+      ? `<nav class="series-pager">
+      ${seriesNav.prev ? `<a href="${seriesNav.prev.slug}.html">&larr; Part ${seriesNav.prev.part}: ${seriesNav.prev.title}</a>` : "<span></span>"}
+      ${seriesNav.next ? `<a href="${seriesNav.next.slug}.html">Part ${seriesNav.next.part}: ${seriesNav.next.title} &rarr;</a>` : "<span></span>"}
+    </nav>`
+      : "";
+
   const content = `<article class="post">
-    <div class="post-meta">${post.date}</div>
+    <div class="post-meta">${metaLine}</div>
     <h1>${post.title}</h1>
     ${post.html}
+    ${nav}
   </article>`;
   return render(post.title, post.excerpt, content, 1);
 }
@@ -151,9 +176,26 @@ function main() {
 
   const posts = readPosts();
 
+  // Build a slug -> {prev, next, total} lookup from the same narrative
+  // ordering the homepage uses, so a post page can link to its neighbours.
+  const seriesNavBySlug = new Map();
+  for (const group of groupPosts(posts)) {
+    if (!group.series) continue;
+    group.posts.forEach((p, i) => {
+      seriesNavBySlug.set(p.slug, {
+        total: group.posts.length,
+        prev: group.posts[i - 1] || null,
+        next: group.posts[i + 1] || null,
+      });
+    });
+  }
+
   fs.writeFileSync(path.join(DIST_DIR, "index.html"), buildIndex(posts));
   for (const post of posts) {
-    fs.writeFileSync(path.join(DIST_DIR, "posts", `${post.slug}.html`), buildPost(post));
+    fs.writeFileSync(
+      path.join(DIST_DIR, "posts", `${post.slug}.html`),
+      buildPost(post, seriesNavBySlug.get(post.slug))
+    );
   }
 
   console.log(`Built ${posts.length} post(s) to dist/`);
