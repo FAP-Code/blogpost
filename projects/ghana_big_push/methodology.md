@@ -75,6 +75,36 @@ are grouped by confidence, not by ambition.
   produce a number that looks rigorous but isn't. The report will state this limitation directly
   rather than present an unsupported estimate.
 
+## 2.7 Environment constraint discovered in Phase 2 (material — read before using any dataset row)
+
+`WebFetch` (direct URL retrieval) is unavailable in this working environment: it returns HTTP 403
+for every domain tested, including MRH, IMF, and Wikipedia — confirmed to be a sandbox network
+policy, not a per-site block (the CONNECT tunnel itself is rejected at the proxy layer). Only
+`WebSearch` (a search-API-mediated tool that returns synthesized snippets, not raw pages) is
+available.
+
+Practical consequence: no dataset row in this project is built from a directly scraped primary
+document (raw HTML table, PDF text extraction, Hansard record). Every row traces back to a
+**WebSearch query result** — typically itself a synthesis of one or more news/government pages,
+not a verbatim primary-source pull. This is a materially different (weaker) evidentiary basis
+than `methodology.md` originally specified, and it is reflected in two ways:
+
+- A new `data_provenance` field (see `data_dictionary.md`) on every processed row, distinct from
+  `verification_status`: `search_synthesis` (built from WebSearch summaries) vs. `direct_scrape`
+  (would require primary-document access this environment does not have).
+- Every row's `verification_status` is capped at what a search-engine synthesis can actually
+  support — many facts that would otherwise be `expenditure_actual` or `completed` if read
+  directly off MRH's tracker table are instead tagged conservatively, because we are one step
+  removed from the primary source.
+
+**If more complete/higher-fidelity data is wanted**, the fastest path is for the primary
+documents to be supplied directly (e.g. the user saving `mrh.gov.gh/big-push-infrastructure-programme/`
+as HTML/PDF and sharing it, or pasting the 2026 budget statement's road-project annex) rather
+than continued reliance on search-engine synthesis, which has a real ceiling on granularity (it
+will not, for instance, reliably return a full 87-row project table with per-project contract
+values — it returns whatever named examples and summary statistics happen to appear in indexed
+news coverage).
+
 ## 3. Data provenance rules
 
 - `data/raw/` holds unmodified source material (saved HTML/PDF snapshots, or verbatim scraped

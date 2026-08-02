@@ -1,8 +1,17 @@
 # Ghana's Big Push Infrastructure Programme: A Data-Driven Policy Investigation
 
-**Status: Phase 1 complete (source inventory + scaffold). Data collection, dataset construction,
-and analysis are Phases 2–5 — not yet done. This README will be rewritten as findings arrive; the
-version below describes the project's purpose and current state honestly, not its finished form.**
+**Status: Phase 1 (source inventory) and Phase 2 (initial dataset construction) complete.
+Regional/statistical analysis, economic/policy analysis, and report writing are Phases 3–5 — not
+yet done. This README is rewritten as findings arrive; the version below describes the project's
+actual current state, including its real limitations, not a polished final form.**
+
+**Read this before using any number from this project:** a hard environment constraint was
+discovered in Phase 2 — this session cannot directly fetch web pages (`WebFetch` is blocked at
+the network layer for every domain tested, government sites and Wikipedia alike). Every figure in
+`data/processed/` was built from `WebSearch` result summaries, not verbatim primary-source
+scraping. This is tracked explicitly via a `data_provenance` field on every row. See
+`methodology.md` §2.7 for full detail, and treat every dataset row as provisional until checked
+against its cited primary source directly.
 
 ## Background
 
@@ -75,34 +84,55 @@ projects/ghana_big_push/
 └── references/                # archived source documents (budget PDFs, IMF reports, etc.)
 ```
 
-## Major findings so far (Phase 1 only)
+## Major findings so far (Phases 1–2)
 
-Phase 1 was source inventory, not analysis — so these are findings *about the evidence base*,
-not yet findings about the programme's performance:
+Phases 1–2 were source inventory and initial dataset construction, not full analysis — so most of
+these are findings *about the evidence base itself*, which is itself a legitimate research
+product for a programme this contested:
 
-1. **Basic facts are contested even in official channels.** Total project count and total
-   programme value both vary substantially by source and date (see `sources.md` Discrepancy Log).
-   Any headline number used without a date and source attached should be treated as unreliable.
+1. **Basic facts are contested even in official channels.** Total project count has been reported
+   as 32, 49, 50, 72, 77, 87, and 140 across different sources and dates — six-plus distinct
+   figures for the same programme (see `sources.md` Discrepancy Log #1, #6). Any headline number
+   used without a date and source attached should be treated as unreliable.
 2. **A genuine primary-source project tracker exists** — MRH's own Big Push page publishes
-   project-level completion rankings. This is the backbone of the Phase 2 dataset.
+   project-level completion rankings (Top 20/Mid/Bottom 20). Its content could not be directly
+   scraped in this environment (see the constraint noted at the top of this file), so it remains
+   the single highest-priority target for direct access in a future phase or session.
 3. **Independent scrutiny is real and active**, not absent: IMANI Africa, the Ghana Institution
-   of Engineering (which formally petitioned the Auditor-General), civil society groups, and the
-   Parliamentary Minority are all on record with specific, checkable concerns (procurement method
-   mix, contract disclosure, the National Roads Authority Act's non-operationalization).
+   of Engineering (which formally petitioned the Auditor-General over GH₵110bn in spending), civil
+   society groups, and the Parliamentary Minority are all on record with specific, checkable
+   concerns (procurement method mix, contract disclosure, the National Roads Authority Act's
+   non-operationalization).
 4. **No completed independent audit exists yet** — the GhIE's April 2026 petition confirms this
-   directly; expenditure figures in the dataset will mostly carry `budget_approved` or
-   `officially_announced` status, not `expenditure_actual`, until an audit or Controller and
-   Accountant-General report is published.
-5. **At least one funding-source tension has a documented resolution**: the "no external debt"
-   messaging around Big Push's GHA-executed contracts coexists with a real, separate $500m World
-   Bank IDA credit (the Ghana Market Access and Connectivity Project) discussed in the same
-   political conversation — whether GMACP is formally counted as part of "Big Push" is an open
-   Phase 2 question, not yet resolved.
+   directly; expenditure figures in the dataset carry `budget_approved` or `officially_announced`
+   status, not `expenditure_actual`, until an audit or Controller and Accountant-General report is
+   published.
+5. **At least one funding-source tension is now well-documented but not resolved**: the "no
+   external debt" messaging around Big Push's GHA-executed contracts (a claimed $5bn awarded)
+   coexists with a real, separate $500m World Bank IDA credit (the Ghana Market Access and
+   Connectivity Project, GMACP) discussed in the same political conversation — whether GMACP is
+   formally counted as part of "Big Push" remains open (`sources.md` discrepancy #3).
+6. **A single project may distort any "average project value" statistic**: the Accra-Kumasi
+   Expressway alone is estimated at $4bn — close to 40% of the programme's entire headline $10bn
+   figure — and uses a 50-year build-and-manage SPV structure distinct from the other named
+   projects. Regional/per-project analyses in Phase 3 will need to treat it as an outlier
+   explicitly, not average it in silently (discrepancy #7).
+7. **A "longest bridge in Ghana" superlative was found applied inconsistently** to two different
+   bridge projects across sources (Dambai, 1.49km, vs. Adawso-Ekye Amanfrom, 3.6km) — logged as
+   both a data-quality flag and a small illustration of how unreliable single-superlative claims
+   are without a primary-source check (discrepancy #5).
+8. **A first real, partial project-level dataset now exists**: 17 named projects in
+   `data/processed/projects.csv`, each with a source, access date, verification status, and
+   explicit data-provenance tag — small relative to the 70+ projects officially claimed, but real
+   and honestly scoped rather than fabricated to look complete.
 
-## Limitations (known as of Phase 1)
+## Limitations
 
-- No machine-readable open-data portal found for Big Push specifically; Phase 2 data collection
-  will involve structured extraction from web pages, PDFs, and news reporting.
+- **Direct source scraping is not possible in this environment** (see the note at the top of this
+  file and `methodology.md` §2.7). This is the single biggest constraint on data quality right
+  now — every figure is one step removed from its primary document.
+- No machine-readable open-data portal found for Big Push specifically, independent of the
+  scraping constraint above.
 - Auditor-General reporting lag means expenditure data will mostly be self-reported by government
   for the foreseeable future.
 - Panel/before-after economic outcome data (travel time, market access, local employment) is
@@ -112,21 +142,27 @@ not yet findings about the programme's performance:
 - No single closely-comparable "big push"-named peer programme was found in other African
   countries; the comparative section will lean on development-economics literature plus loosely
   comparable national programmes (Kenya/Ethiopia infrastructure strategy, Nigeria's Lekki
-  Port/Lagos–Ibadan rail) rather than a false one-to-one match.
+  Port/Lagos–Ibadan rail, the LAPSSET corridor) rather than a false one-to-one match.
+- `data/processed/regions.csv` has real population figures for only 5 of 16 regions and exact MPI
+  poverty rates for none (only qualitative "above 50%" for two regions) — Phase 3's regional
+  equity analysis will be limited by this until fuller GSS data is retrieved.
 
 ## Reproduction instructions
-
-Not yet applicable — `src/` and `notebooks/` are empty pending Phase 2. Once populated:
 
 ```bash
 cd projects/ghana_big_push
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
-jupyter notebook notebooks/
+python src/validate_datasets.py   # checks data/processed/*.csv against data_dictionary.md
 ```
+
+`notebooks/` is still empty — analysis notebooks are a Phase 3 deliverable, once the regional and
+statistical analysis begins.
 
 ## Roadmap
 
-See `research-plan.md` §11 for the full 5-phase plan. Phase 1 (this commit) covered source
-inventory and repository scaffolding. Next: Phase 2, dataset construction from the MRH tracker
-and budget documents, applying the verification-status tagging throughout.
+See `research-plan.md` §11 for the full 5-phase plan. Phase 1 covered source inventory and
+repository scaffolding. Phase 2 (this commit) built the first real dataset from what `WebSearch`
+could retrieve, discovered and documented the `WebFetch` environment constraint, and expanded the
+discrepancy log from 4 to 7 entries. Next: Phase 3, regional/statistical analysis (descriptive
+stats, Gini/concentration index, charts and maps) on the data now in `data/processed/`.

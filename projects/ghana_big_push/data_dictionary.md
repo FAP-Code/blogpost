@@ -37,6 +37,7 @@ variable we didn't anticipate, but existing fields and their meanings should not
 | `source_url` | string | URL | Primary citation for this row |
 | `date_accessed` | date | `YYYY-MM-DD` | When we retrieved this data |
 | `verification_status` | categorical | see `methodology.md` §1 | Required, non-null |
+| `data_provenance` | categorical | `search_synthesis` \| `direct_scrape` \| `user_supplied` | See `methodology.md` §2.7 — this environment cannot directly fetch external pages, so every row so far is `search_synthesis` unless a document was pasted/supplied directly by the user |
 | `notes` | string | free text | Alternate names, caveats, cross-references to the discrepancy log |
 
 ## `data/processed/regions.csv` — one row per region, per period

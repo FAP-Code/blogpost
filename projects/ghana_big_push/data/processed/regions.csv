@@ -1,0 +1,18 @@
+region,period,population_est,mpi_poverty_rate,road_density_km_per_sqkm,agricultural_output_share,source_url,date_accessed,verification_status,data_provenance,notes
+Ahafo,2021,564668,,,,https://en.wikipedia.org/wiki/Ahafo_Region,2026-08-02,independently_verified,search_synthesis,2021 census figure. Least populous region nationally per this source.
+Ashanti,2021,,,,,,,,,No figure retrieved via search this pass - was formerly the most populous region prior to 2021, now second to Greater Accra per sources found.
+Bono,2021,,,,,,,,,Not yet retrieved.
+Bono East,2021,,,,,,,,,Not yet retrieved.
+Central,2021,2859821,,,,https://www.citypopulation.de/en/ghana/admin/,2026-08-02,independently_verified,search_synthesis,2021 census figure.
+Eastern,2021,2925653,,,,https://www.citypopulation.de/en/ghana/admin/,2026-08-02,independently_verified,search_synthesis,2021 census figure.
+Greater Accra,2021,5455692,,,,https://www.statista.com/statistics/1133032/distribution-of-population-in-ghana-by-region-and-gender/,2026-08-02,independently_verified,search_synthesis,"2021 census figure, 17.7% of national population - now Ghana's most populous region, overtaking Ashanti."
+North East,2025Q3,,>50,,,https://gna.org.gh/2026/01/ghana-records-decline-in-multidimensional-poverty-but-regional-gaps-persist/,2026-08-02,independently_verified,search_synthesis,"MPI poverty rate reported only qualitatively as 'above 50 percent' for 2025 Q2-Q3 - exact figure not retrieved via search. Population not yet retrieved."
+Northern,2021,2310939,,,,https://en.wikipedia.org/wiki/Northern_Region_(Ghana),2026-08-02,independently_verified,search_synthesis,2021 census figure.
+Oti,2021,,,,,,,,,Not yet retrieved.
+Savannah,2025Q3,,>50,,,https://gna.org.gh/2026/01/ghana-records-decline-in-multidimensional-poverty-but-regional-gaps-persist/,2026-08-02,independently_verified,search_synthesis,Same qualitative MPI note as North East. Population not yet retrieved.
+Upper East,2021,,,,,,,,,Not yet retrieved.
+Upper West,2021,,,,,,,,,"Was the least populous region before 2021 census (Ahafo took that position in 2021) - implies a specific, retrievable figure exists but was not returned in this search pass."
+Volta,2021,,,,,,,,,Not yet retrieved.
+Western,2021,,,,,,,,,Not yet retrieved.
+Western North,2021,,,,,,,,,Not yet retrieved.
+ALL_REGIONS_NATIONAL,2025Q3,30792608,21.9,,,https://allafrica.com/stories/202601220022.html,2026-08-02,independently_verified,search_synthesis,"National totals, not a region - population is the 2021 census de facto total (15610149 female + 15182459 male); MPI is the 2025 Q3 national rate, down from 24.9% in 2024 Q4. Rural MPI 31.9% vs urban MPI 14.2% (2025 Q3) - also national, not regional."
