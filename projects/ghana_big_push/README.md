@@ -1,9 +1,10 @@
 # Ghana's Big Push Infrastructure Programme: A Data-Driven Policy Investigation
 
-**Status: Phase 1 (source inventory) and Phase 2 (initial dataset construction) complete.
-Regional/statistical analysis, economic/policy analysis, and report writing are Phases 3–5 — not
-yet done. This README is rewritten as findings arrive; the version below describes the project's
-actual current state, including its real limitations, not a polished final form.**
+**Status: all 5 planned phases complete — source inventory, initial dataset, regional/statistical
+analysis, economic/policy analysis, and the consolidated report are all done. This is a first full
+pass, not a final audited verdict: see the constraint below and §11–12 of `reports/full_report.md`
+for exactly what would need direct source access (rather than this session's `WebSearch`-only
+research) to firm up further.**
 
 **Read this before using any number from this project:** a hard environment constraint was
 discovered in Phase 2 — this session cannot directly fetch web pages (`WebFetch` is blocked at
@@ -12,6 +13,9 @@ the network layer for every domain tested, government sites and Wikipedia alike)
 scraping. This is tracked explicitly via a `data_provenance` field on every row. See
 `methodology.md` §2.7 for full detail, and treat every dataset row as provisional until checked
 against its cited primary source directly.
+
+**Start here:** `reports/executive_summary.md` (short, general audience) or
+`reports/full_report.md` (complete, sourced, with every limitation stated).
 
 ## Background
 
@@ -217,14 +221,23 @@ python src/build_figures.py       # regenerates outputs/figures/ and outputs/tab
 `notebooks/` is still empty by choice — see `notebooks/README.md` for why Phase 3's analysis was
 implemented as a plain script instead.
 
-## Roadmap
+## Roadmap — all 5 phases complete
 
-See `research-plan.md` §11 for the full 5-phase plan. Phase 1 covered source inventory and
-repository scaffolding. Phase 2 built the first real dataset from what `WebSearch` could retrieve
-and documented the `WebFetch` environment constraint. Phase 3 filled in remaining
-region population data, built the legitimate descriptive charts/tables, and explicitly deferred
-regional-equity statistics rather than computing them on a non-representative sample. Phase 4
-(this commit) produced the theory of change, comparative analysis, implementation risk assessment,
-and illustrative cost-benefit framing in `reports/phase4_economic_policy_analysis.md`. Next: Phase
-5, consolidating everything into `reports/full_report.md` and `reports/executive_summary.md`, plus
-the monitoring & evaluation framework and final policy recommendations.
+See `research-plan.md` §11 for the original 5-phase plan. Phase 1: source inventory and repository
+scaffolding. Phase 2: first real dataset from what `WebSearch` could retrieve, and the `WebFetch`
+environment constraint documented. Phase 3: remaining region population data filled in, legitimate
+descriptive charts/tables built, regional-equity statistics explicitly deferred rather than
+computed on a non-representative sample. Phase 4: theory of change, comparative analysis,
+implementation risk assessment, illustrative cost-benefit framing
+(`reports/phase4_economic_policy_analysis.md`). **Phase 5 (this commit): consolidated
+`reports/full_report.md` and `reports/executive_summary.md`, including a new monitoring &
+evaluation framework (built on NDPC's and IMANI's existing recommendations, not invented from
+scratch) and 8 numbered policy recommendations in the same R1–R8 style as this repo's "Beyond
+Cocoa" blog series.**
+
+**What would come next, if this project continues**: `reports/full_report.md` §12 lists 7
+concrete next steps in priority order — starting with directly retrieving MRH's full project
+tracker (the single biggest lever for closing the gaps this research had to leave open) — for
+whenever direct document access (not just `WebSearch`) is available, whether via a supplied
+document, a different tool configuration, or simply time passing and more projects completing
+enough to evaluate real outcomes.
