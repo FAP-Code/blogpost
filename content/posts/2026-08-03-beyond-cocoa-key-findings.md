@@ -16,6 +16,8 @@ Non-traditional agricultural exports, cashew, shea, rubber, oil palm, mango, and
 
 ## Almost none of it is processed at home
 
+<img src="../assets/charts/raw-export-ratios.svg" alt="Bar chart: percentage of annual production exported raw by crop. Cashew Nuts 95%, Natural Rubber 95%, Shea Nuts 90%, Cocoa Beans 70%, Mango approximately 60%, Oil Palm approximately 40%." style="margin: 1.5rem 0;">
+
 | Crop | Exported raw | Domestic processing |
 |---|---|---|
 | Cashew | 95% | 6–10% |

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 290" width="100%" role="img" aria-label="Percentage of annual production exported in raw, unprocessed form, by crop: Cashew Nuts 95%, Natural Rubber 95%, Shea Nuts 90%, Cocoa Beans 70%, Mango approximately 60%, Oil Palm approximately 40%.">
+  <title>Raw export ratios by crop</title>
+  <line x1="162" y1="16" x2="162" y2="256" stroke="rgba(11,31,58,0.14)" stroke-width="1" />
+  <text x="162" y="274" text-anchor="middle" font-family="'DM Mono', monospace" font-size="11" fill="rgba(11,31,58,0.55)">0%</text>
+  <line x1="264.5" y1="16" x2="264.5" y2="256" stroke="rgba(11,31,58,0.14)" stroke-width="1" />
+  <text x="264.5" y="274" text-anchor="middle" font-family="'DM Mono', monospace" font-size="11" fill="rgba(11,31,58,0.55)">25%</text>
+  <line x1="367" y1="16" x2="367" y2="256" stroke="rgba(11,31,58,0.14)" stroke-width="1" />
+  <text x="367" y="274" text-anchor="middle" font-family="'DM Mono', monospace" font-size="11" fill="rgba(11,31,58,0.55)">50%</text>
+  <line x1="469.5" y1="16" x2="469.5" y2="256" stroke="rgba(11,31,58,0.14)" stroke-width="1" />
+  <text x="469.5" y="274" text-anchor="middle" font-family="'DM Mono', monospace" font-size="11" fill="rgba(11,31,58,0.55)">75%</text>
+  <line x1="572" y1="16" x2="572" y2="256" stroke="rgba(11,31,58,0.14)" stroke-width="1" />
+  <text x="572" y="274" text-anchor="middle" font-family="'DM Mono', monospace" font-size="11" fill="rgba(11,31,58,0.55)">100%</text>
+  <path d="M162,25 L547.5,25 A4,4 0 0 1 551.5,29 L551.5,43 A4,4 0 0 1 547.5,47 L162,47 Z" fill="#0b1f3a" />
+  <text x="150" y="36" text-anchor="end" dominant-baseline="central" font-family="'DM Mono', monospace" font-size="13" fill="#0b1f3a">Cashew Nuts</text>
+  <text x="561.5" y="36" text-anchor="start" dominant-baseline="central" font-family="'DM Mono', monospace" font-size="13" font-weight="500" fill="#0b1f3a">95%</text>
+  <path d="M162,65 L547.5,65 A4,4 0 0 1 551.5,69 L551.5,83 A4,4 0 0 1 547.5,87 L162,87 Z" fill="#0b1f3a" />
+  <text x="150" y="76" text-anchor="end" dominant-baseline="central" font-family="'DM Mono', monospace" font-size="13" fill="#0b1f3a">Natural Rubber</text>
+  <text x="561.5" y="76" text-anchor="start" dominant-baseline="central" font-family="'DM Mono', monospace" font-size="13" font-weight="500" fill="#0b1f3a">95%</text>
+  <path d="M162,105 L527,105 A4,4 0 0 1 531,109 L531,123 A4,4 0 0 1 527,127 L162,127 Z" fill="#0b1f3a" />
+  <text x="150" y="116" text-anchor="end" dominant-baseline="central" font-family="'DM Mono', monospace" font-size="13" fill="#0b1f3a">Shea Nuts</text>
+  <text x="541" y="116" text-anchor="start" dominant-baseline="central" font-family="'DM Mono', monospace" font-size="13" font-weight="500" fill="#0b1f3a">90%</text>
+  <path d="M162,145 L445,145 A4,4 0 0 1 449,149 L449,163 A4,4 0 0 1 445,167 L162,167 Z" fill="#0b1f3a" />
+  <text x="150" y="156" text-anchor="end" dominant-baseline="central" font-family="'DM Mono', monospace" font-size="13" fill="#0b1f3a">Cocoa Beans</text>
+  <text x="459" y="156" text-anchor="start" dominant-baseline="central" font-family="'DM Mono', monospace" font-size="13" font-weight="500" fill="#0b1f3a">70%</text>
+  <path d="M162,185 L404,185 A4,4 0 0 1 408,189 L408,203 A4,4 0 0 1 404,207 L162,207 Z" fill="#0b1f3a" />
+  <text x="150" y="196" text-anchor="end" dominant-baseline="central" font-family="'DM Mono', monospace" font-size="13" fill="#0b1f3a">Mango</text>
+  <text x="418" y="196" text-anchor="start" dominant-baseline="central" font-family="'DM Mono', monospace" font-size="13" font-weight="500" fill="#0b1f3a">~60%</text>
+  <path d="M162,225 L322,225 A4,4 0 0 1 326,229 L326,243 A4,4 0 0 1 322,247 L162,247 Z" fill="#0b1f3a" />
+  <text x="150" y="236" text-anchor="end" dominant-baseline="central" font-family="'DM Mono', monospace" font-size="13" fill="#0b1f3a">Oil Palm (CPO)</text>
+  <text x="336" y="236" text-anchor="start" dominant-baseline="central" font-family="'DM Mono', monospace" font-size="13" font-weight="500" fill="#0b1f3a">~40%</text>
+</svg>
+
