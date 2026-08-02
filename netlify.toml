@@ -1,0 +1,7 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  GITHUB_USER = "fap-code"
+  REPO_NAME = "blogpost"
