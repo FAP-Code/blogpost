@@ -1,6 +1,6 @@
-# Ghanaian Economy
+# Ghana, Africa & the World
 
-A blog for research and commentary on Ghana's economic development and structural transformation — statically generated, auto-published to GitHub Pages on every push to `main`.
+A blog for research and commentary on Ghana's economic development and structural transformation, set in the wider context of Africa and the global economy — statically generated, auto-published to GitHub Pages on every push to `main`.
 
 ## Structure
 

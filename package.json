@@ -2,7 +2,7 @@
   "name": "blogpost",
   "version": "0.1.0",
   "private": true,
-  "description": "Research, policy writing, and social media content on Ghana's economic development and structural transformation.",
+  "description": "Research, policy writing, and social media content on Ghana's economic development and structural transformation, in the context of Africa and the global economy.",
   "type": "module",
   "scripts": {
     "build": "node site/build.js",

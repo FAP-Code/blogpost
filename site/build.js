@@ -1,4 +1,4 @@
-// Static site generator for the Ghanaian Economy blog.
+// Static site generator for the Ghana, Africa & the World blog.
 // Reads content/posts/*.md (with frontmatter), renders them through
 // site/templates/layout.html, and writes a static site to dist/.
 //
@@ -74,7 +74,7 @@ function buildIndex(posts) {
     items || "<p>No posts yet — add markdown files to content/posts/.</p>"
   }`;
 
-  return render("Home", "Research and commentary on Ghana's economic development.", content, 0);
+  return render("Home", "Research and commentary on Ghana's economic development, Africa, and the world.", content, 0);
 }
 
 function buildPost(post) {
