@@ -177,6 +177,33 @@ exactly the kind of silent data loss this project's methodology is built to avoi
 plotting on integer row positions and attaching label text only as a display tick label, so
 duplicate-looking claims never overwrite each other.
 
+## Economic and policy analysis (Phase 4)
+
+`reports/phase4_economic_policy_analysis.md` (draft, feeds into `reports/full_report.md` in
+Phase 5) covers:
+
+- **A theory of change** (inputs → activities → outputs → outcomes → impacts), stating plainly
+  that the evidence base is strong for inputs/activities, thin for outputs, and essentially
+  nonexistent yet for outcomes/impacts — most projects are too early in construction (6% physical
+  progress on the most closely tracked bridge) for outcome data to exist. Any employment/
+  market-access/poverty claim about Big Push right now is a projection, not a measured result, and
+  is labeled as such.
+- **Comparative analysis**: Sinohydro (2018– ) as the genuine within-country baseline — same
+  all-16-regions scope, same opposition figure raising similar transparency objections — versus an
+  honest statement that no closely comparable *named* peer programme was found in other African
+  countries, rather than forcing a false equivalence with LAPSSET/Nigeria/Ethiopia examples that
+  differ structurally.
+- **Implementation risk assessment** across five categories, each tied to a specific finding: debt
+  sustainability (42.2% debt-to-GDP vs. the 45% anchor, and only 1.4% of GDP in capital spending
+  against a GH₵30.8bn 2026 allocation), procurement (the direct government-vs-GhIE/Minority
+  contradiction), delivery capacity (GHA's own workers flagging equipment/logistics gaps), cost
+  concentration (Accra–Kumasi Expressway alone ≈ 40% of the programme total), and maintenance (no
+  post-completion funding plan found at all — flagged as an evidence gap, not assumed to exist).
+- **Illustrative cost-benefit framing** for the three best-documented projects (Accra–Kumasi,
+  GMACP, Dambai Bridge) — stating directly that a real CBA isn't possible with information found so
+  far, and naming the specific missing inputs (traffic forecasts, toll projections, baseline
+  travel times) rather than estimating them.
+
 ## Reproduction instructions
 
 ```bash
@@ -194,8 +221,10 @@ implemented as a plain script instead.
 
 See `research-plan.md` §11 for the full 5-phase plan. Phase 1 covered source inventory and
 repository scaffolding. Phase 2 built the first real dataset from what `WebSearch` could retrieve
-and documented the `WebFetch` environment constraint. Phase 3 (this commit) filled in remaining
+and documented the `WebFetch` environment constraint. Phase 3 filled in remaining
 region population data, built the legitimate descriptive charts/tables, and explicitly deferred
-regional-equity statistics rather than computing them on a non-representative sample. Next: Phase
-4, economic/policy analysis (theory of change, comparative section, implementation risk
-assessment, illustrative cost-benefit for 2–3 flagship corridors).
+regional-equity statistics rather than computing them on a non-representative sample. Phase 4
+(this commit) produced the theory of change, comparative analysis, implementation risk assessment,
+and illustrative cost-benefit framing in `reports/phase4_economic_policy_analysis.md`. Next: Phase
+5, consolidating everything into `reports/full_report.md` and `reports/executive_summary.md`, plus
+the monitoring & evaluation framework and final policy recommendations.
