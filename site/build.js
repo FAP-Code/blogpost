@@ -123,6 +123,29 @@ const PROJECTS = [
       },
     ],
   },
+  {
+    slug: "ghana-food-security",
+    title: "Ghana's Food Glut Paradox",
+    summary:
+      "Ghanaian farmers were recently sitting on 1.2 million unsold metric tonnes of grain, including roughly $330 million of unsold rice, while about 8 million Ghanaians simultaneously couldn't afford enough food. This project asks why gluts and food insecurity coexist in the same food system, and finds two genuinely different problems: a storage and market-access failure concentrated in the south, and a chronic poverty crisis concentrated in the north, that get misdiagnosed when treated as one undifferentiated food crisis.",
+    type: "external",
+    note:
+      "This project's full report lives in this repo's projects/ghana_food_security/ folder. The plain-language summary below is rendered on this site to read directly; the full report goes through every figure, discrepancy, and caveat in depth.",
+    fullReport: {
+      slug: "full-report",
+      title: "Full Report",
+      path: "projects/ghana_food_security/food_security_full_report.md",
+    },
+    links: [
+      {
+        slug: "blog-summary",
+        title: "What We Actually Know (Plain-Language Summary)",
+        path: "projects/ghana_food_security/food_security_blog_summary.md",
+        summary:
+          "Ghana isn't short of food, it's short of a working system to move it: farmers were sitting on 1.2 million tonnes of unsold grain while roughly 8 million Ghanaians (a quarter of the country, on one measure) didn't have enough to eat. This is genuinely two different crises, not one: a storage and cross-border trade failure in the south (Ashanti, Bono), where tomatoes and maize rot for lack of storage and market access, and a chronic poverty crisis in the north, holding 56% of the country's food-insecure people on just 28% of the population, worsened by refugees fleeing conflict in Burkina Faso. The fixes mostly already exist and aren't being scaled: a cold-storage trial cut onion losses from 30% to 5%, a flagship tomato factory has sat stalled for decades, and the agency built to buy up surplus grain has its own documented corruption problem.",
+      },
+    ],
+  },
 ];
 
 // All links/assets in the layout are written relative to the page (e.g. "assets/x"),
