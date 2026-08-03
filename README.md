@@ -1,6 +1,6 @@
-# Ghana, Africa & the World
+# Frankly Speaking
 
-A blog for research and commentary on Ghana's economic development and structural transformation, set in the wider context of Africa and the global economy — statically generated, auto-published to GitHub Pages on every push to `main`.
+Frank Adu Poku's blog for research and commentary on Ghana's economic development and structural transformation, set in the wider context of Africa and the global economy — statically generated, auto-published to GitHub Pages on every push to `main`.
 
 ## Structure
 

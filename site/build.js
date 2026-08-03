@@ -1,4 +1,4 @@
-// Static site generator for the Ghana, Africa & the World blog.
+// Static site generator for the Frankly Speaking blog.
 // Reads content/posts/*.md (with frontmatter), renders them through
 // site/templates/layout.html, and writes a static site to dist/.
 //
