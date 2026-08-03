@@ -100,6 +100,29 @@ const PROJECTS = [
       },
     ],
   },
+  {
+    slug: "ghana-fuel-pricing",
+    title: "The Politics of Fuel Pricing in Ghana",
+    summary:
+      "Ghana deregulated fuel pricing in 2015, and the evidence shows roughly 75 to 81% of the pump price genuinely is outside government's control today. But a 2024 university study finds the deeper story isn't secret price-fixing, it's politicians on all sides campaigning on fuel-price promises their own numbers show they mostly can't keep, plus real, active government leverage over the remaining slice of the price through levies, margins, and a contested 2024 price floor policy.",
+    type: "external",
+    note:
+      "This project's full report lives in this repo's projects/ghana_fuel_pricing/ folder. The plain-language summary below is rendered on this site to read directly; the full report goes through every levy, discrepancy, and caveat in depth.",
+    fullReport: {
+      slug: "full-report",
+      title: "Full Report",
+      path: "projects/ghana_fuel_pricing/fuel_pricing_full_report.md",
+    },
+    links: [
+      {
+        slug: "blog-summary",
+        title: "What We Actually Know (Plain-Language Summary)",
+        path: "projects/ghana_fuel_pricing/fuel_pricing_blog_summary.md",
+        summary:
+          "About 75 to 81% of Ghana's pump price (crude oil plus the cedi exchange rate) is now genuinely outside any government's control, but the remaining 15 to 20% (levies, margins, and a 2024 minimum-price floor) is still an active lever, and gets used. A 2024 university study finds politicians on all sides promise lower fuel prices while campaigning and fail to deliver in office, not mainly from bad faith but because most of the price simply isn't theirs to move, the same pattern recurring with the parties reversed a decade apart. Official subsidies formally ended in 2015, but a targeted diesel subsidy and a reformed industrial subsidy scheme both surfaced in 2026, alongside a live corruption case at the fuel regulator itself. Transport fares are where price changes show up fastest, and even the country's main consumer advocacy group doesn't always agree with the transport union on how much fares should rise.",
+      },
+    ],
+  },
 ];
 
 // All links/assets in the layout are written relative to the page (e.g. "assets/x"),
