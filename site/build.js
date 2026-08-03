@@ -46,22 +46,30 @@ const PROJECTS = [
       "A five-phase, citation-backed investigation into Ghana's flagship roads-and-bridges programme: what's officially claimed, what's independently verified, and what's still contested, including a live discrepancy log and a dataset built entirely from sourced, dated claims rather than filled in to look complete.",
     type: "external",
     note:
-      "This project's full report, dataset, and analysis code live in this repo's projects/ghana_big_push/ folder. Each summary below opens the underlying rendered file on GitHub; the full report ties everything together in one document.",
-    fullReportPath: "projects/ghana_big_push/reports/full_report.md",
+      "This project's full report, dataset, and analysis code live in this repo's projects/ghana_big_push/ folder. The three pieces below are rendered on this site to read directly; the underlying dataset and analysis scripts stay on GitHub, where that kind of material belongs.",
+    datasetPath: "projects/ghana_big_push",
+    fullReport: {
+      slug: "full-report",
+      title: "Full Report",
+      path: "projects/ghana_big_push/reports/full_report.md",
+    },
     links: [
       {
+        slug: "executive-summary",
         title: "Executive Summary",
         path: "projects/ghana_big_push/reports/executive_summary.md",
         summary:
           "Big Push is Ghana's roughly $10 billion, multi-year roads and bridges programme covering all 16 regions, but even the basic numbers are disputed: project counts range from 32 to 140 depending on the announcement, and total value estimates range from GH₵43 billion to GH₵110 billion. The programme's own public tracker and a high competitive-tender rate are genuine strengths, while a formal audit petition, contested procurement claims, and an unresolved link to a $500 million World Bank credit remain open questions. Most projects are too early in construction for any claim about jobs, travel times, or market access to be more than a projection at this stage.",
       },
       {
+        slug: "economic-policy-analysis",
         title: "Economic & Policy Analysis",
         path: "projects/ghana_big_push/reports/phase4_economic_policy_analysis.md",
         summary:
           "Lays out the full theory of change behind Big Push, from budget allocations through to the poverty and market-access gains the programme is meant to eventually produce, and is explicit about which links in that chain are actually evidenced today, inputs and activities, versus which are not, everything from outcomes onward, since most projects are still under construction. Compares Big Push to Ghana's 2018 Sinohydro bauxite-barter infrastructure programme, the closest domestic precedent, and finds the same political fault lines, financing opacity, the same opposition MP, an unresolved audit, reopening around each one.",
       },
       {
+        slug: "sources-discrepancy-log",
         title: "Sources & Discrepancy Log",
         path: "projects/ghana_big_push/sources.md",
         summary:
@@ -87,6 +95,12 @@ function render(pageTitle, description, content, depth = 0) {
     .replaceAll("{{year}}", YEAR);
 }
 
+// marked emits bare <table> elements; wrap them so wide tables (long URLs,
+// many columns) scroll horizontally instead of overflowing the page.
+function wrapTables(html) {
+  return html.replace(/<table>/g, '<div class="table-wrap"><table>').replace(/<\/table>/g, "</table></div>");
+}
+
 function readPosts() {
   if (!fs.existsSync(POSTS_DIR)) return [];
   return fs
@@ -104,7 +118,7 @@ function readPosts() {
         tags: data.tags || [],
         series: data.series || null,
         part: typeof data.part === "number" ? data.part : null,
-        html: marked.parse(content),
+        html: wrapTables(marked.parse(content)),
       };
     })
     .sort((a, b) => (a.date < b.date ? 1 : -1));
@@ -192,19 +206,47 @@ function buildSeriesProjectPage(proj, groups) {
   return render(proj.title, proj.summary, content, 1);
 }
 
+// Reads a standalone markdown file (a research report living outside
+// content/posts/, with no frontmatter) and renders it to HTML. Strips a
+// single leading "# Title" line so the page can supply its own heading
+// (matching the nav label exactly) instead of duplicating a slightly
+// different one from inside the document.
+function readReportHtml(relPath) {
+  const raw = fs.readFileSync(path.join(ROOT, relPath), "utf-8");
+  const stripped = raw.replace(/^#\s+.*\n+/, "");
+  return wrapTables(marked.parse(stripped));
+}
+
+// Report pages live at dist/projects/<project-slug>/<report-slug>.html, so
+// their assets/links are two levels down from the site root.
+function buildReportPage(proj, report, summary) {
+  const html = readReportHtml(report.path);
+  const content = `<article class="post">
+    <div class="post-meta"><a href="../${proj.slug}.html">&larr; ${proj.title}</a></div>
+    <h1>${report.title}</h1>
+    ${html}
+    <p class="source-link"><a href="${REPO_BLOB}/${report.path}" target="_blank" rel="noopener">View source on GitHub &rarr;</a></p>
+  </article>`;
+  return render(`${report.title} | ${proj.title}`, summary || proj.summary, content, 2);
+}
+
 function buildExternalProjectPage(proj) {
   const items = proj.links
     .map(
       (link) => `
       <div class="post-list-item series-item">
-        <h3><a href="${REPO_BLOB}/${link.path}" target="_blank" rel="noopener">${link.title}</a></h3>
+        <h3><a href="${proj.slug}/${link.slug}.html">${link.title}</a></h3>
         <p>${link.summary}</p>
       </div>`
     )
     .join("\n");
 
-  const fullReportLink = proj.fullReportPath
-    ? `<p class="full-report-link"><a href="${REPO_BLOB}/${proj.fullReportPath}" target="_blank" rel="noopener">Read the full report &rarr;</a></p>`
+  const fullReportLink = proj.fullReport
+    ? `<p class="full-report-link"><a href="${proj.slug}/${proj.fullReport.slug}.html">Read the full report &rarr;</a></p>`
+    : "";
+
+  const datasetLink = proj.datasetPath
+    ? `<p class="source-link"><a href="${REPO_BLOB}/${proj.datasetPath}" target="_blank" rel="noopener">View the dataset &amp; analysis code on GitHub &rarr;</a></p>`
     : "";
 
   const content = `
@@ -214,7 +256,8 @@ function buildExternalProjectPage(proj) {
     ${fullReportLink}
     <div class="project-posts">
       ${items}
-    </div>`;
+    </div>
+    ${datasetLink}`;
 
   return render(proj.title, proj.summary, content, 1);
 }
@@ -286,6 +329,23 @@ function main() {
     const html =
       proj.type === "series" ? buildSeriesProjectPage(proj, groups) : buildExternalProjectPage(proj);
     fs.writeFileSync(path.join(DIST_DIR, "projects", `${proj.slug}.html`), html);
+
+    if (proj.type === "external") {
+      const projDir = path.join(DIST_DIR, "projects", proj.slug);
+      fs.mkdirSync(projDir, { recursive: true });
+      for (const link of proj.links) {
+        fs.writeFileSync(
+          path.join(projDir, `${link.slug}.html`),
+          buildReportPage(proj, link, link.summary)
+        );
+      }
+      if (proj.fullReport) {
+        fs.writeFileSync(
+          path.join(projDir, `${proj.fullReport.slug}.html`),
+          buildReportPage(proj, proj.fullReport)
+        );
+      }
+    }
   }
 
   for (const post of posts) {
