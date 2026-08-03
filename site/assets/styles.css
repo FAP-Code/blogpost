@@ -67,6 +67,77 @@ main {
   padding: 2.5rem 1.5rem 4rem;
 }
 
+.about h1 {
+  margin-bottom: 0.5rem;
+}
+
+.about p {
+  margin-top: 0;
+}
+
+.location-contact {
+  margin: 2rem 0;
+  padding: 1.25rem 1.5rem;
+  background: rgba(11,31,58,0.05);
+  border-left: 3px solid var(--gold);
+}
+
+.location-contact h2 {
+  font-family: 'Playfair Display', serif;
+  color: var(--navy);
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem;
+}
+
+.location-contact p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.location-contact a {
+  color: var(--navy);
+}
+
+.projects h2 {
+  font-family: 'Playfair Display', serif;
+  color: var(--navy);
+  font-size: 1.5rem;
+  margin: 2.5rem 0 1rem;
+}
+
+.project-card {
+  border: 1px solid rgba(11,31,58,0.15);
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.project-card h2 {
+  font-family: 'Playfair Display', serif;
+  margin: 0 0 0.5rem;
+  font-size: 1.6rem;
+}
+
+.project-card h2 a {
+  color: var(--navy);
+  text-decoration: none;
+}
+
+.project-card p {
+  margin: 0;
+  color: #333;
+}
+
+.project-posts {
+  margin-top: 1.5rem;
+}
+
+.external-note {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.85rem;
+  color: #595959;
+}
+
 .post-list-item {
   border-bottom: 1px solid rgba(11,31,58,0.15);
   padding: 1.5rem 0;
