@@ -180,6 +180,29 @@ main {
   text-decoration: none;
 }
 
+.series-item p {
+  margin: 0;
+  color: #333;
+}
+
+.full-report-link {
+  margin: 1.5rem 0 0.5rem;
+}
+
+.full-report-link a {
+  display: inline-block;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--navy);
+  background: rgba(201,162,39,0.15);
+  border: 1px solid var(--gold);
+  border-radius: 4px;
+  padding: 0.6rem 1rem;
+  text-decoration: none;
+}
+
 .post-meta {
   font-family: 'DM Mono', monospace;
   font-size: 0.75rem;

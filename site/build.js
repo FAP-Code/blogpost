@@ -46,15 +46,27 @@ const PROJECTS = [
       "A five-phase, citation-backed investigation into Ghana's flagship roads-and-bridges programme: what's officially claimed, what's independently verified, and what's still contested, including a live discrepancy log and a dataset built entirely from sourced, dated claims rather than filled in to look complete.",
     type: "external",
     note:
-      "This project's full report, dataset, and analysis code live in this repo's projects/ghana_big_push/ folder. The links below open the rendered files on GitHub.",
+      "This project's full report, dataset, and analysis code live in this repo's projects/ghana_big_push/ folder. Each summary below opens the underlying rendered file on GitHub; the full report ties everything together in one document.",
+    fullReportPath: "projects/ghana_big_push/reports/full_report.md",
     links: [
-      { title: "Executive Summary", path: "projects/ghana_big_push/reports/executive_summary.md" },
-      { title: "Full Report", path: "projects/ghana_big_push/reports/full_report.md" },
-      { title: "Economic & Policy Analysis", path: "projects/ghana_big_push/reports/phase4_economic_policy_analysis.md" },
-      { title: "Research Plan", path: "projects/ghana_big_push/research-plan.md" },
-      { title: "Methodology", path: "projects/ghana_big_push/methodology.md" },
-      { title: "Sources & Discrepancy Log", path: "projects/ghana_big_push/sources.md" },
-      { title: "Dataset & Analysis Code", path: "projects/ghana_big_push" },
+      {
+        title: "Executive Summary",
+        path: "projects/ghana_big_push/reports/executive_summary.md",
+        summary:
+          "Big Push is Ghana's roughly $10 billion, multi-year roads and bridges programme covering all 16 regions, but even the basic numbers are disputed: project counts range from 32 to 140 depending on the announcement, and total value estimates range from GH₵43 billion to GH₵110 billion. The programme's own public tracker and a high competitive-tender rate are genuine strengths, while a formal audit petition, contested procurement claims, and an unresolved link to a $500 million World Bank credit remain open questions. Most projects are too early in construction for any claim about jobs, travel times, or market access to be more than a projection at this stage.",
+      },
+      {
+        title: "Economic & Policy Analysis",
+        path: "projects/ghana_big_push/reports/phase4_economic_policy_analysis.md",
+        summary:
+          "Lays out the full theory of change behind Big Push, from budget allocations through to the poverty and market-access gains the programme is meant to eventually produce, and is explicit about which links in that chain are actually evidenced today, inputs and activities, versus which are not, everything from outcomes onward, since most projects are still under construction. Compares Big Push to Ghana's 2018 Sinohydro bauxite-barter infrastructure programme, the closest domestic precedent, and finds the same political fault lines, financing opacity, the same opposition MP, an unresolved audit, reopening around each one.",
+      },
+      {
+        title: "Sources & Discrepancy Log",
+        path: "projects/ghana_big_push/sources.md",
+        summary:
+          "A tiered bibliography, official Government of Ghana sources, international and multilateral bodies, and independent research and civil-society groups, built entirely from dated, sourced claims, plus a running log of every place two credible sources give a different number for the same project count, total cost, or financing structure. Also documents a real constraint on this research: direct scraping of government and IMF sites wasn't possible in this environment, so every claim here is a search-engine synthesis of a primary document, not a verbatim pull from it, and is flagged as needing a live recheck before being treated as final.",
+      },
     ],
   },
 ];
@@ -186,14 +198,20 @@ function buildExternalProjectPage(proj) {
       (link) => `
       <div class="post-list-item series-item">
         <h3><a href="${REPO_BLOB}/${link.path}" target="_blank" rel="noopener">${link.title}</a></h3>
+        <p>${link.summary}</p>
       </div>`
     )
     .join("\n");
+
+  const fullReportLink = proj.fullReportPath
+    ? `<p class="full-report-link"><a href="${REPO_BLOB}/${proj.fullReportPath}" target="_blank" rel="noopener">Read the full report &rarr;</a></p>`
+    : "";
 
   const content = `
     <h1 style="font-family:'Playfair Display',serif;color:var(--navy)">${proj.title}</h1>
     <p>${proj.summary}</p>
     <p class="external-note">${proj.note}</p>
+    ${fullReportLink}
     <div class="project-posts">
       ${items}
     </div>`;
