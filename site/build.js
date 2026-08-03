@@ -77,6 +77,29 @@ const PROJECTS = [
       },
     ],
   },
+  {
+    slug: "ghana-imf-exit",
+    title: "Ghana's Exit from the IMF Programme",
+    summary:
+      "Ghana concluded its $3 billion IMF Extended Credit Facility in July 2026, its first programme exit in years, backed by falling inflation, rebuilt reserves, and two credit rating upgrades. This project asks whether that stabilization is turning into genuine structural transformation, or repeating the pattern of Ghana's 2006 and 2019 exits, both followed by a slide back into crisis within about three years.",
+    type: "external",
+    note:
+      "This project's full report lives in this repo's projects/ghana_imf_exit/ folder. The plain-language summary below is rendered on this site to read directly; the full report goes through every figure, discrepancy, and caveat in depth.",
+    fullReport: {
+      slug: "full-report",
+      title: "Full Report",
+      path: "projects/ghana_imf_exit/imf_exit_full_report.md",
+    },
+    links: [
+      {
+        slug: "blog-summary",
+        title: "What We Actually Know (Plain-Language Summary)",
+        path: "projects/ghana_imf_exit/imf_exit_blog_summary.md",
+        summary:
+          "The stabilization is real and independently confirmed: inflation fell from above 20% in 2024 to roughly 5% by mid-2026, reserves rose to $14.5 billion, and Fitch and S&P both upgraded Ghana's credit rating. But Ghana didn't walk away from the IMF, it moved into a lighter, non-financing form of continued oversight, and the debt picture depends entirely on which number you look at: a 45% snapshot, a rise to 53 to 55% the IMF itself projects within two years, or a 45% target the law doesn't require until 2034. Export diversification and job-creation programmes show real momentum but are still pipelines and small-base growth, not yet measured, structural change, and Ghana's last two programme exits were both followed by relapse into crisis within about three years.",
+      },
+    ],
+  },
 ];
 
 // All links/assets in the layout are written relative to the page (e.g. "assets/x"),
